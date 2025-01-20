@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: moroccoVvipTripGoal
+
+  datasource:
+   url: jdbc:postgresql://localhost:5432/MoroccoVvipTripGoal_db
+   username: admin
+   password: admin
+   driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: db/changelog/db.changelog-master.yaml
+
+token:
+  signing:
+    key: Q2lyNXNOTENrV1dNRGI2NDlJc1p5bTBxM2p1M2RZeTc1amtmbW1HRnZHST0=
+  validity:
+    access:
+      in:
+        minutes: 1000
+    refresh:
+      in:
+        month: 1
+
+server:
+  port: 8080
